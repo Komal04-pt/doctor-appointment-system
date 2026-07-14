@@ -15,10 +15,6 @@ const AllDoctors = () => {
 
   const { doctors } = useSelector((state) => state.doctor);
 
-  useEffect(() => {
-    console.log("Doctors Redux Data:", doctors);
-  }, [doctors]);
-
   return (
     <>
       <div className="container doc-container my-4">
@@ -29,14 +25,14 @@ const AllDoctors = () => {
         <div className="row g-4 justify-content-center">
           {doctors?.map((d) => (
             <div className="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center" key={d._id}>
-              <div className="card w-100 text-center">
+              <div className="card w-100 text-center" style={{ maxWidth: "22rem" }}>
                 <NavLink to={`/doctors/${d._id}`}>
                   
-                  <div className="text-center pt-2">
+                  <div className="img-wrapper w-100">
                     <img
                       src={d?.image || "https://static.thenounproject.com/png/1743561-200.png"}
                       alt={d?.name || "doctor"}
-                      className="rounded-circle object-fit-cover mx-auto border doc-card-img"
+                      className="doc-card-img"
                     />
                   </div>
 

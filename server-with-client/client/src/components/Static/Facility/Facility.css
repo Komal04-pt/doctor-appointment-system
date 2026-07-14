@@ -26,8 +26,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
-    padding: 15px;
+    justify-content: center; /* Pure content structure center alignment */
+    padding: 20px 15px;
     margin: 0;
     border-radius: 12px;
     border: 1px solid rgba(0,0,0,0.05);
@@ -39,10 +39,10 @@
 
 .facility-container i {
     font-size: 38px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 12px;
+    margin: 0 0 12px 0; /* Clear bottom margins */
     color: #064d4d;
     transition: color 0.2s ease-in-out;
 }
@@ -50,9 +50,7 @@
 .facility-container .card-body {
     padding: 0;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
 }
 
 .facility-container .card-title {
@@ -87,13 +85,12 @@
     .facility-container .card {
         width: calc(50% - 6px);
         height: 140px;
-        padding: 12px;
-        justify-content: center;
+        padding: 15px 10px;
     }
 
     .facility-container i {
         font-size: 30px;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
     }
 
     .facility-container .card-title {
