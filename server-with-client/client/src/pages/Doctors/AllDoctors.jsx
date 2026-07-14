@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./AllDoctors.css";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 import { getAllDoctors } from "../../redux/actions/doctorActions";
 import { reset } from "../../redux/slice/authSlice";
 
@@ -28,17 +28,15 @@ const AllDoctors = () => {
         
         <div className="row g-4 justify-content-center">
           {doctors?.map((d) => (
-            <div className="col-12 sm:col-6 col-md-6 col-lg-4 d-flex justify-content-center" key={d._id}>
-              <div className="card w-100 text-center" style={{ maxWidth: "20rem" }}>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center" key={d._id}>
+              <div className="card w-100 text-center">
                 <NavLink to={`/doctors/${d._id}`}>
                   
                   <div className="text-center pt-2">
                     <img
                       src={d?.image || "https://static.thenounproject.com/png/1743561-200.png"}
                       alt={d?.name || "doctor"}
-                      width={140}
-                      height={140}
-                      className="rounded-circle object-fit-cover mx-auto border"
+                      className="rounded-circle object-fit-cover mx-auto border doc-card-img"
                     />
                   </div>
 

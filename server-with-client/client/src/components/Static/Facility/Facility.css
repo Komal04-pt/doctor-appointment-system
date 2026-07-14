@@ -26,7 +26,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
     padding: 15px;
     margin: 0;
     border-radius: 12px;
@@ -34,6 +34,7 @@
     background-color: #ffffff;
     box-shadow: 0 4px 6px rgba(0,0,0,0.02);
     transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
 }
 
 .facility-container i {
@@ -41,7 +42,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: #064d4d;
     transition: color 0.2s ease-in-out;
 }
@@ -49,6 +50,9 @@
 .facility-container .card-body {
     padding: 0;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .facility-container .card-title {
@@ -84,6 +88,7 @@
         width: calc(50% - 6px);
         height: 140px;
         padding: 12px;
+        justify-content: center;
     }
 
     .facility-container i {

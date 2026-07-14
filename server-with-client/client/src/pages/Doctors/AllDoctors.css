@@ -5,7 +5,7 @@
 }
 
 .doc-container .card {
-    padding: 15px;
+    padding: 20px 15px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -73,15 +73,41 @@
     text-align: center;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .doc-container h4 {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         line-height: 1.4;
-        padding: 0 10px;
+        padding: 0 8px;
+        margin-bottom: 16px !important;
     }
     
     .doc-container .card {
-        max-width: 100% !important;
+        max-width: 85% !important;
+        padding: 14px 10px;
         margin: 0 auto;
+    }
+
+    .doc-container .card img {
+        width: 110px !important;
+        height: 110px !important;
+    }
+
+    .doc-container h6 {
+        font-size: 0.95rem;
+        margin-bottom: 2px;
+    }
+
+    .doc-container .card-body p {
+        font-size: 0.82rem;
+    }
+
+    .doc-container .card-footer p {
+        font-size: 0.82rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .doc-container .card {
+        max-width: 95% !important;
     }
 }

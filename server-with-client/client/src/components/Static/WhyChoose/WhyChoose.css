@@ -48,7 +48,7 @@
 
 .why-container div h3 {
     font-size: 1.35rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 12px;
     text-align: center;
     flex-shrink: 0;
@@ -77,29 +77,30 @@
         max-width: 100%;
         height: auto;
         min-height: unset;
-        margin: 12px 0;
-        padding: 24px 20px;
+        margin: 10px 0;
+        padding: 18px 14px;
     }
 
     .why-container div img {
-        width: 70px;
-        height: 70px;
-        margin-bottom: 12px;
+        width: 60px;
+        height: 60px;
+        margin-bottom: 8px;
     }
 
     .why-container h2 {
-        font-size: 1.6rem;
-        margin-bottom: 15px;
+        font-size: 1.5rem;
+        margin-bottom: 12px;
     }
 
     .why-container div h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
     }
 
     .why-container p {
-        font-size: 0.88rem;
-        line-height: 1.5;
-        padding: 0 8px;
+        font-size: 0.84rem;
+        line-height: 1.4;
+        padding: 0 4px;
         word-wrap: break-word;
     }
 }
