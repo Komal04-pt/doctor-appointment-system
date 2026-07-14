@@ -13,48 +13,7 @@
     "role": "doctor",
     "image": "https://hospital.kims.ac.in/wp-content/uploads/2025/07/dr-anupam-jena.webp"
   },
-  {
-    "name": "Dr. Gaurav Garg",
-    "email": "gaurav@gmail.com",
-    "degree": "MBBS, MD",
-    "speciality": "Endodontist",
-    "fees": 600,
-    "phone": "9856543210",
-    "address": "Delhi",
-    "available": true,
-    "experience": "10",
-    "about": "Dr. Gaurav Garg specializes in advanced root canal treatments, cosmetic dentistry, and dental implants.",
-    "role": "doctor",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS14NUJPQFGwrQSNhwhZKvQ8_jjXtzVPvsKGX-_SRLL5sO1fZjH8tX0GyI&s=10"
-  },
-  {
-    "name": "Dr. Aparn G ",
-    "email": "aparn@gmail.com",
-    "degree": "MBBS, DCH (Pediatrics)",
-    "speciality": "Pediatrician",
-    "fees": 500,
-    "phone": "9812345678",
-    "address": "Delhi",
-    "available": true,
-    "experience": "7",
-    "about": "Dr. Aparn G is a compassionate child specialist who treats newborns and adolescents.",
-    "role": "doctor",
-    "image": "https://rainbowhospitalsproduction.s3.ap-south-1.amazonaws.com/user/doctor/large_images/PNVlPIGyj2DSsZ5oyFQPB08qhOmrvWZPqFkDpOpa.png"
-  },
-  {
-    "name": "Dr. Vikas Ray",
-    "email": "vikas@gmail.com",
-    "degree": "MBBS, MD (Neurology)",
-    "speciality": "Neurologist",
-    "fees": 1000,
-    "phone": "9765432109",
-    "address": "Delhi",
-    "available": false,
-    "experience": "5",
-    "about": "Dr. Vikas Ray is a highly reputed Neurologist dealing with brain disorders, chronic migraines, and epilepsy.",
-    "role": "doctor",
-    "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=600&auto=format&fit=crop"
-  },
+
   {
     "name": "Dr. Rashmi Sharma",
     "email": "rashmi@gmail.com",
@@ -69,6 +28,22 @@
     "role": "doctor",
     "image": "https://drrashmisharma.in/wp-content/uploads/2024/03/rr.jpg"
   },
+
+  {
+    "name": "Dr. Vikas Ray",
+    "email": "vikas@gmail.com",
+    "degree": "MBBS, MD (Neurology)",
+    "speciality": "Neurologist",
+    "fees": 1000,
+    "phone": "9765432109",
+    "address": "Delhi",
+    "available": false,
+    "experience": "5",
+    "about": "Dr. Vikas Ray is a highly reputed Neurologist dealing with brain disorders, chronic migraines, and epilepsy.",
+    "role": "doctor",
+    "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=600&auto=format&fit=crop"
+  },  
+  
   {
     "name": "Dr. Rahul Parmar",
     "email": "rahul@gmail.com",
@@ -124,6 +99,35 @@
     "about": "Dr. Priya Kapoor treats respiratory disorders including asthma, COPD, and chronic sleep apnea.",
     "role": "doctor",
     "image": "https://media.istockphoto.com/id/1292015214/photo/portrait-female-doctor-stock-photo.jpg?s=612x612&w=0&k=20&c=nr4XaWnRPQnWqwhzahajZhskIDG1yK9DmIteV5gpUOI="
+  },
+
+    {
+    "name": "Dr. Gaurav Garg",
+    "email": "gaurav@gmail.com",
+    "degree": "MBBS, MD",
+    "speciality": "Endodontist",
+    "fees": 600,
+    "phone": "9856543210",
+    "address": "Delhi",
+    "available": true,
+    "experience": "10",
+    "about": "Dr. Gaurav Garg specializes in advanced root canal treatments, cosmetic dentistry, and dental implants.",
+    "role": "doctor",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS14NUJPQFGwrQSNhwhZKvQ8_jjXtzVPvsKGX-_SRLL5sO1fZjH8tX0GyI&s=10"
+  },
+   {
+    "name": "Dr. Aparn G ",
+    "email": "aparn@gmail.com",
+    "degree": "MBBS, DCH (Pediatrics)",
+    "speciality": "Pediatrician",
+    "fees": 500,
+    "phone": "9812345678",
+    "address": "Delhi",
+    "available": true,
+    "experience": "7",
+    "about": "Dr. Aparn G is a compassionate child specialist who treats newborns and adolescents.",
+    "role": "doctor",
+    "image": "https://rainbowhospitalsproduction.s3.ap-south-1.amazonaws.com/user/doctor/large_images/PNVlPIGyj2DSsZ5oyFQPB08qhOmrvWZPqFkDpOpa.png"
   },
   {
     "name": "Dr. Rajesh Singhal",
