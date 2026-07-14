@@ -26,7 +26,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Pure content structure center alignment */
+    justify-content: center;
     padding: 20px 15px;
     margin: 0;
     border-radius: 12px;
@@ -39,24 +39,32 @@
 
 .facility-container i {
     font-size: 38px;
-    display: inline-flex;
+    line-height: 1;              /* extra spacing hatane ke liye */
+    display: flex;               /* inline-flex ki jagah flex, better centering ke liye */
     align-items: center;
     justify-content: center;
-    margin: 0 0 12px 0; /* Clear bottom margins */
+    width: 100%;
+    margin: 0 0 12px 0;
     color: #064d4d;
     transition: color 0.2s ease-in-out;
 }
 
 .facility-container .card-body {
     padding: 0;
+    margin: 0;
     text-align: center;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .facility-container .card-title {
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0;
+    line-height: 1.3;
 }
 
 .facility-container .card:hover {
