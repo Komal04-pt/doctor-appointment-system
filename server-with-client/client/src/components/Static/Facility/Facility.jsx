@@ -23,7 +23,7 @@ const Facility = () => {
             onClick={() => handleCardClick(d)}
             style={{ cursor: "pointer" }}
           >
-            <i className={`${d.icon} card-img-top`}></i>
+            <i className={d.icon}></i>
             <div className="card-body">
               <h5 className="card-title">{d.title}</h5>
             </div>

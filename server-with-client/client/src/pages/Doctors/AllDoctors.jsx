@@ -25,14 +25,15 @@ const AllDoctors = () => {
         <div className="row g-4 justify-content-center">
           {doctors?.map((d) => (
             <div className="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center" key={d._id}>
-              <div className="card w-100 text-center" style={{ maxWidth: "22rem" }}>
+              <div className="card w-100 text-center" style={{ maxWidth: "20rem" }}>
                 <NavLink to={`/doctors/${d._id}`}>
                   
-                  <div className="img-wrapper w-100">
+                  <div className="text-center pt-2 w-100">
                     <img
                       src={d?.image || "https://static.thenounproject.com/png/1743561-200.png"}
                       alt={d?.name || "doctor"}
-                      className="doc-card-img"
+                      className="object-fit-cover mx-auto border rounded-3"
+                      style={{ width: "160px", height: "160px" }}
                     />
                   </div>
 
