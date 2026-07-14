@@ -32,8 +32,7 @@ const AllDoctors = () => {
                     <img
                       src={d?.image || "https://static.thenounproject.com/png/1743561-200.png"}
                       alt={d?.name || "doctor"}
-                      className="object-fit-cover mx-auto border rounded-3"
-                      style={{ width: "160px", height: "160px" }}
+                      className="border doc-card-img-circle"
                     />
                   </div>
 

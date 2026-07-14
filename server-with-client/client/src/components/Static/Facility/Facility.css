@@ -23,11 +23,11 @@
 .facility-container .card {
     width: 260px;
     height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 15px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important; /* Forces icon & text to lock in exact center */
+    padding: 15px;
     margin: 0;
     border-radius: 12px;
     border: 1px solid rgba(0,0,0,0.05);
@@ -39,23 +39,19 @@
 
 .facility-container i {
     font-size: 38px;
-    line-height: 1;              /* extra spacing hatane ke liye */
-    display: flex;               /* inline-flex ki jagah flex, better centering ke liye */
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    margin: 0 0 12px 0;
+    margin-bottom: 10px; /* Text se maintainable gap ke liye */
     color: #064d4d;
     transition: color 0.2s ease-in-out;
 }
 
 .facility-container .card-body {
-    padding: 0;
-    margin: 0;
+    padding: 0 !important;
+    margin: 0 !important;
     text-align: center;
-    width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -63,8 +59,9 @@
 .facility-container .card-title {
     font-size: 1.1rem;
     font-weight: 600;
-    margin: 0;
-    line-height: 1.3;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.2;
 }
 
 .facility-container .card:hover {
@@ -93,12 +90,13 @@
     .facility-container .card {
         width: calc(50% - 6px);
         height: 140px;
-        padding: 15px 10px;
+        padding: 12px;
+        justify-content: center !important;
     }
 
     .facility-container i {
         font-size: 30px;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
     }
 
     .facility-container .card-title {
