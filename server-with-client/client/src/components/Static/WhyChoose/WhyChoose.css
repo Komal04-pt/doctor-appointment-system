@@ -16,81 +16,90 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    border: 1px solid gray;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    margin: 15px;
+    padding: 25px 20px;
+    border-radius: 12px;
     flex: 1 1 300px;
     max-width: 360px;
-    min-height: 480px;
+    height: auto;
+    min-height: 420px; 
     box-sizing: border-box;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.03);
+    background-color: #ffffff;
 }
 
 .why-container div img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     flex-shrink: 0;
 }
 
 .why-container h2 {
     text-align: center;
-    font-weight: normal;
+    font-weight: 700;
     font-size: 2.2rem;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     width: 100%;
+    color: #1f2937;
 }
 
 .why-container div h3 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
+    font-weight: 600;
     margin-bottom: 12px;
     text-align: center;
     flex-shrink: 0;
+    color: #111827;
 }
 
 .why-container p {
     text-align: center;
-    color: rgb(63, 61, 61);
+    color: #4b5563;
     font-size: 0.95rem;
-    line-height: 1.5;
-    padding: 0 5px;
+    line-height: 1.6;
     margin: 0;
     width: 100%;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
     .why-container {
         flex-direction: column;
         align-items: center;
-        padding: 0 20px;
+        padding: 0 16px;
     }
     
     .why-container div {
         width: 100%;
         max-width: 100%;
         height: auto;
-        min-height: 320px;
-        margin: 15px 0;
-        padding: 20px 16px;
+        min-height: unset;
+        margin: 12px 0;
+        padding: 24px 20px;
     }
 
     .why-container div img {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 10px;
+        width: 70px;
+        height: 70px;
+        margin-bottom: 12px;
     }
 
     .why-container h2 {
-        font-size: 1.4rem;
-        margin-bottom: 10px;
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    .why-container div h3 {
+        font-size: 1.2rem;
     }
 
     .why-container p {
-        overflow-y: visible;
-        max-height: none;
         font-size: 0.88rem;
-        line-height: 1.45;
+        line-height: 1.5;
+        padding: 0 8px;
+        word-wrap: break-word;
     }
 }
