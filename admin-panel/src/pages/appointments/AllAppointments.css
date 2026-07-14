@@ -1,0 +1,131 @@
+.appointments-header {
+  margin: 24px 0 18px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #0f766e;
+}
+
+.appointments-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 2px;
+}
+
+.appointments-header p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.appointments-table-wrapper {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.appointments-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.appointments-table thead {
+  background: #f9fafb;
+}
+
+.appointments-table th {
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.appointments-table td {
+  padding: 12px 18px;
+  font-size: 14px;
+  color: #1f2937;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.appointments-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.appointments-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.small-id {
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.text-muted {
+  color: #6b7280;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-scheduled {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-completed {
+  background: #d1fae5;
+  color: #047857;
+}
+
+.status-noshow {
+  background: #e5e7eb;
+  color: #4b5563;
+}
+
+.status-cancelled {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.payment-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.payment-online {
+  background: #d1fae5;
+  color: #047857;
+}
+
+.payment-cash {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.details-link {
+  color: #0f766e;
+  font-weight: 500;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.details-link:hover {
+  text-decoration: underline;
+}

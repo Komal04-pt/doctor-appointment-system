@@ -1,0 +1,45 @@
+.admin-home-wrapper {
+  display: flex;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.admin-home-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.admin-home-content {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .admin-home-wrapper {
+    flex-direction: column;
+  }
+
+  .admin-home-sidebar {
+    width: 100%;
+  }
+
+  .admin-home-content {
+    padding: 16px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .col-12,
+  .col-md-4,
+  .col-sm-6,
+  .col-lg-3 {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}

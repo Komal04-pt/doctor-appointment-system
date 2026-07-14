@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Genral Care",
+    "icon": "fa-solid fa-user-doctor",
+    "info": "Comprehensive primary healthcare, regular wellness checkups, and preventive screenings for all age groups.",
+    "fees": "500/- RS",
+    "timing": "10:00 AM - 08:00 PM"
+  },
+  {
+    "title": "Pathalogy Lab",
+    "icon": "fa-solid fa-flask-vial",
+    "info": "State-of-the-art diagnostic laboratory providing accurate blood tests, biochemistry analysis, and culture screenings.",
+    "fees": "300/- RS",
+    "timing": "24 Hours Available"
+  },
+  {
+    "title": "Dental Care",
+    "icon": "fa-solid fa-tooth",
+    "info": "Advanced dental procedures including scaling, painless root canal treatments, capping, implants, and orthodontic care.",
+    "fees": "600/- RS",
+    "timing": "10:00 AM - 07:00 PM"
+  },
+  {
+    "title": "24X7 Emergency",
+    "icon": "fa-solid fa-truck-medical",
+    "info": "Immediate critical care support with fully equipped ICU setups, trauma response teams, and 24/7 ambulance services.",
+    "fees": "1000/- RS",
+    "timing": "24 Hours Available"
+  },
+  {
+    "title": "heart Issue",
+    "icon": "fa-solid fa-heart-pulse",
+    "info": "Specialized cardiology consultations, ECG trackers, eco-cardiography, and management of cardiovascular health parameters.",
+    "fees": "1200/- RS",
+    "timing": "11:00 AM - 05:00 PM"
+  },
+  {
+    "title": "Neurology",
+    "icon": "fa-solid fa-brain",
+    "info": "Advanced clinical neurological tracking for severe migraines, neuromuscular complications, and spinal problems.",
+    "fees": "1500/- RS",
+    "timing": "12:00 PM - 04:00 PM"
+  },
+  {
+    "title": "Rhematology",
+    "icon": "fa-solid fa-bone",
+    "info": "Dedicated treatment for bone health, chronic arthritis conditions, joint pain management, and autoimmune muscle disorders.",
+    "fees": "800/- RS",
+    "timing": "09:00 AM - 02:00 PM"
+  },
+  {
+    "title": "Eye Care",
+    "icon": "fa-solid fa-eye",
+    "info": "Advanced ophthalmology clinic for computer-vision syndrome checkups, cataract screenings, and prescription lens testing.",
+    "fees": "400/- RS",
+    "timing": "10:00 AM - 06:00 PM"
+  }
+]

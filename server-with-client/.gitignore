@@ -1,0 +1,19 @@
+# Environment variables
+.env
+ckient/.env
+
+# Node modules
+node_modules/
+ckient/node_modules/
+
+# Build files
+ckient/dist/
+ckient/build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db

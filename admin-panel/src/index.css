@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.nav{
+    background-color: #3f3d3d;
+    color:#fff;
+    margin-bottom: 30px;
+}
+
+.nav .nav-link{
+    color: #fff;
+    border-bottom: 1px solid #000;
+}
+.nav .nav-link:hover{
+    color: #fff;
+    background-color: #000;
+    
+}
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}

@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Amit Sharma",
+        "address": "Local Resident",
+        "commentTile": "Great Service",
+        "commentDescription": "The doctors and staff are very helpful. Best hospital in our area.",
+        "rating": 5,
+        "pic": "https://static.thenounproject.com/png/801397-200.png"
+    },
+    {
+        "id": 2,
+        "name": "Priya Patel",
+        "address": "Patient",
+        "commentTile": "Very Clean Hospital",
+        "commentDescription": "The hospital is very clean and the treatment was done on time. Staff is polite.",
+        "rating": 4,
+        "pic": "https://static.thenounproject.com/png/801397-200.png"
+    },
+    {
+        "id": 3,
+        "name": "Suman Verma",
+        "address": "Local Resident",
+        "commentTile": "Highly Recommended",
+        "commentDescription": "Online doctor booking was very easy. Fast and good service.",
+        "rating": 4.5,
+        "pic": "https://static.thenounproject.com/png/801397-200.png"
+    },
+    {
+        "id": 4,
+        "name": "Vikram Singh",
+        "address": "Emergency Patient",
+        "commentTile": "Excellent Emergency Care",
+        "commentDescription": "Brought my father here late at night. Quick response by doctors and great emergency team.",
+        "rating": 5,
+        "pic": "https://static.thenounproject.com/png/801397-200.png"
+    },
+    {
+        "id": 5,
+        "name": "Anjali Gupta",
+        "address": "Patient",
+        "commentTile": "Good Experience",
+        "commentDescription": "The consultations fees are affordable and they maintain good pharmacy inventory.",
+        "rating": 4,
+        "pic": "https://static.thenounproject.com/png/801397-200.png"
+    },
+    {
+        "id": 6,
+        "name": "Rohan Malhotra",
+        "address": "Local Resident",
+        "commentTile": "Professional Doctors",
+        "commentDescription": "Very well organized healthcare facility. Lab tests reports were delivered digitally on time.",
+        "rating": 4.5,
+        "pic": "https://static.thenounproject.com/png/801397-200.png"
+    }
+]

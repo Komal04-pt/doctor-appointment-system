@@ -1,0 +1,138 @@
+.doctors-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin: 24px 0 18px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #0f766e;
+}
+
+.doctors-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 2px;
+}
+
+.doctors-header p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.add-doctor-btn {
+  background: #0f766e;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.add-doctor-btn:hover {
+  background: #0d5f58;
+}
+
+.doctors-table-wrapper {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.doctors-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+}
+
+.doctors-table thead {
+  background: #f9fafb;
+}
+
+.doctors-table th {
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.doctors-table td {
+  padding: 12px 18px;
+  font-size: 14px;
+  color: #1f2937;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.doctors-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.doctors-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.doctor-avatar-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.doctor-avatar-fallback {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #0f766e;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+
+.text-muted {
+  color: #6b7280;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-available {
+  background: #d1fae5;
+  color: #047857;
+}
+
+.status-unavailable {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.details-link {
+  color: #0f766e;
+  font-weight: 500;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.details-link:hover {
+  text-decoration: underline;
+}

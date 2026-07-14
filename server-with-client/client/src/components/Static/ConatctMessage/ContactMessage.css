@@ -1,0 +1,85 @@
+
+.message-container {
+    margin: 10px auto;
+    padding: 0 10px;
+    max-width: 1300px; 
+}
+
+
+.mform-card {
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    padding: 15px 20px !important;
+}
+
+
+.mform-card form {
+    gap: 8px !important; 
+}
+
+.mform-card h3 {
+    font-size: 22px !important;
+    margin-bottom: 2px !important;
+}
+
+.mform-card p.text-muted {
+    margin-bottom: 12px !important;
+    font-size: 13px !important;
+}
+
+
+.mform-card .form-control,
+.mform-card .form-select {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+    font-size: 13px;
+    padding: 4px 10px; 
+    height: 34px; 
+    transition: all 0.2s ease-in-out;
+}
+
+.mform-card textarea.form-control {
+    min-height: 65px !important; 
+    max-height: 80px !important;
+    height: auto !important;
+    resize: none;
+}
+
+.mform-card .form-control:focus,
+.mform-card .form-select:focus {
+    background-color: #ffffff;
+    border-color: #008080;
+    box-shadow: 0 0 0 0.15rem rgba(0, 128, 128, 0.15);
+}
+
+.mform-card label {
+    margin-bottom: 1px !important; 
+    font-size: 12px;
+}
+
+.contact-submit-btn {
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 6px 12px !important;
+    height: 36px;
+}
+
+.contact-submit-btn:hover {
+    background-color: #006666 !important;
+    transform: translateY(-1px);
+}
+
+
+@media (max-width: 767.98px) {
+    .message-container {
+        margin: 5px auto;
+    }
+    .mform-card {
+        padding: 15px !important;
+    }
+   
+    .responsive-iframe-map {
+        min-height: 220px !important;
+    }
+}
