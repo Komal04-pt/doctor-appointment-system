@@ -1,37 +1,104 @@
-.facilityHeadig{
+.facilityHeadig {
     text-align: center;
-    padding-top: 50px;
-    font-weight: bold;
+    padding-top: 30px;
+    font-weight: 700;
+    font-size: 2rem;
     color: rgb(6,77,77);
+    margin-bottom: 10px;
 }
 
-.facility-container{
+.facility-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 30px 16px;
     flex-wrap: wrap;
+    gap: 16px;
     background-color: #9db4c0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.facility-container .card{
-    width: 300px;
+.facility-container .card {
+    width: 260px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    margin: 10px;
+    padding: 15px;
+    margin: 0;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.05);
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: all 0.2s ease-in-out;
 }
 
-.facility-container i{
-    font-size: 50px;
+.facility-container i {
+    font-size: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
+    color: #064d4d;
+    transition: color 0.2s ease-in-out;
 }
 
-.facility-container .card:hover{
+.facility-container .card-body {
+    padding: 0;
+    text-align: center;
+}
+
+.facility-container .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.facility-container .card:hover {
     cursor: pointer;
     background-color: rgb(7,158,158);
     color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.facility-container .card:hover i {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .facilityHeadig {
+        font-size: 1.6rem;
+        padding-top: 20px;
+    }
+
+    .facility-container {
+        padding: 20px 12px;
+        gap: 12px;
+    }
+
+    .facility-container .card {
+        width: calc(50% - 6px);
+        height: 140px;
+        padding: 12px;
+    }
+
+    .facility-container i {
+        font-size: 30px;
+        margin-bottom: 6px;
+    }
+
+    .facility-container .card-title {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .facility-container .card {
+        width: 100%;
+        height: 130px;
+    }
 }

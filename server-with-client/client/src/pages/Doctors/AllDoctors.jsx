@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import AllDoctorsData from "./DoctorsData.json";
 import "./AllDoctors.css";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router";
@@ -23,33 +22,33 @@ const AllDoctors = () => {
   return (
     <>
       <div className="container doc-container my-4">
-        <h4 className="text-center text-success mt-3 mb-4">
+        <h4 className="text-center text-success mt-3 mb-4 fw-bold">
           Select a Doctor and book your appointment online now!
         </h4>
         
         <div className="row g-4 justify-content-center">
           {doctors?.map((d) => (
-            <div className="col-12 col-md-6 col-lg-4 d-flex justify-content-center" key={d._id}>
-              <div className="card w-100 text-center" style={{ maxWidth: "18rem" }}>
-                <NavLink to={`/doctors/${d._id}`} className="text-decoration-none text-dark">
+            <div className="col-12 sm:col-6 col-md-6 col-lg-4 d-flex justify-content-center" key={d._id}>
+              <div className="card w-100 text-center" style={{ maxWidth: "20rem" }}>
+                <NavLink to={`/doctors/${d._id}`}>
                   
-                  <div className="text-center pt-3">
+                  <div className="text-center pt-2">
                     <img
                       src={d?.image || "https://static.thenounproject.com/png/1743561-200.png"}
                       alt={d?.name || "doctor"}
-                      width={150}
-                      height={150}
-                      className="rounded object-fit-cover mx-auto"
+                      width={140}
+                      height={140}
+                      className="rounded-circle object-fit-cover mx-auto border"
                     />
                   </div>
 
                   <div className="card-body">
-                    <h6 className="fw-bold">{d.name}</h6>
-                    <p className="text-muted mb-0">{d.degree}</p>
+                    <h6>{d.name}</h6>
+                    <p className="mb-0">{d.degree}</p>
                   </div>
                   
-                  <div className="card-footer bg-transparent border-0 pb-3">
-                    <p className="m-0 fw-semibold text-danger">
+                  <div className="card-footer">
+                    <p className="m-0 fw-semibold text-danger text-sm">
                       <i className={d.icon}></i> {d.speciality}
                     </p>
                   </div>

@@ -32,12 +32,14 @@ const UserProfile = () => {
 
   return (
     <>
-      <div className="container py-5">
+      <div className="container py-3 py-md-5 px-3">
         <div className="row justify-content-center">
-          <div className="col-md-10 col-lg-9">
-            <h4 className="text-center mb-4">Manage Your Account & Appointments</h4>
+          <div className="col-12 col-md-10 col-lg-9">
+            <h5 className="text-center mb-3 fw-bold text-dark fs-5 fs-md-4">
+              Manage Your Account & Appointments
+            </h5>
             
-            <div className="card p-4 shadow-sm">
+            <div className="card p-3 p-md-4 shadow-sm border border-light-subtle rounded-3">
               <div className="row align-items-center">
                 
                 <div className="col-md-4 text-center mb-3 mb-md-0">
@@ -48,57 +50,63 @@ const UserProfile = () => {
                         : "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
                     }
                     alt="userPic"
-                    className="img-fluid rounded-circle border"
-                    style={{ width: "155px", height: "155px", objectFit: "cover" }}
+                    className="img-fluid rounded-circle border border-2 shadow-sm mx-auto"
+                    style={{ width: "120px", height: "120px", smWidth: "140px", smHeight: "140px", objectFit: "cover" }}
                   />
                 </div>
 
                 <div className="col-md-8">
-                  <div className="user-container mb-3">
+                  <div className="user-container mb-2">
                     
-                    <div className="row g-3 mb-2">
-                      <div className="col-sm-6">
-                        <h6>Name : {user?.name}</h6>
+                    <div className="row g-2 g-md-3 mb-2 text-start">
+                      <div className="col-12 col-sm-6">
+                        <div className="small text-muted mb-0">Name</div>
+                        <div className="fw-semibold text-dark text-sm">{user?.name}</div>
                       </div>
-                      <div className="col-sm-6">
-                        <h6>Email : {user?.email}</h6>
+                      <div className="col-12 col-sm-6">
+                        <div className="small text-muted mb-0">Email</div>
+                        <div className="fw-semibold text-dark text-sm text-break">{user?.email}</div>
                       </div>
-                      <div className="col-sm-6">
-                        <h6>Gender : {user?.gender || "NA"}</h6>
+                      <div className="col-6 col-sm-6">
+                        <div className="small text-muted mb-0">Gender</div>
+                        <div className="fw-semibold text-dark text-sm">{user?.gender || "NA"}</div>
                       </div>
-                      <div className="col-sm-6">
-                        <h6>Phone : {user?.phone || "NA"}</h6>
+                      <div className="col-6 col-sm-6">
+                        <div className="small text-muted mb-0">Phone</div>
+                        <div className="fw-semibold text-dark text-sm">{user?.phone || "NA"}</div>
                       </div>
-                      <div className="col-sm-6">
-                        <h6>DOB : {user?.dob || "NA"}</h6>
+                      <div className="col-6 col-sm-6">
+                        <div className="small text-muted mb-0">DOB</div>
+                        <div className="fw-semibold text-dark text-sm">{user?.dob || "NA"}</div>
                       </div>
-                      <div className="col-sm-6">
-                        <h6>Address : {user?.address || "NA"}</h6>
+                      <div className="col-6 col-sm-6">
+                        <div className="small text-muted mb-0">Address</div>
+                        <div className="fw-semibold text-dark text-sm">{user?.address || "NA"}</div>
                       </div>
                     </div>
                     
-                    <h4 className="mt-3">
-                      <Link to={`/user/reset-password/${user?._id}`} style={{ fontSize: "1.05rem" }}>
-                        Reset Password
+                    <div className="mt-3 pt-2 border-t">
+                      <Link to={`/user/reset-password/${user?._id}`} className="text-decoration-none small fw-medium text-primary">
+                        <i className="fa-solid fa-key me-1 small"></i> Reset Password
                       </Link>
-                    </h4>
+                    </div>
                   </div>
 
-                  <div className="button-container d-flex flex-wrap gap-2 mt-4">
+                  <div className="button-container d-flex flex-wrap gap-2 mt-3 pt-2 border-top">
                     <button
-                      className="btn btn-warning"
+                      className="btn btn-warning btn-sm px-3 flex-grow-1 flex-sm-grow-0 fw-medium"
                       onClick={() => setIsOpen(!isOpen)}
                     >
-                      <i className="fa-solid fa-pen-to-square"></i> Edit Profile
+                      <i className="fa-solid fa-pen-to-square me-1"></i> Edit Profile
                     </button>
                     <button
-                      className="btn btn-primary"
+                      className="btn btn-primary btn-sm px-3 flex-grow-1 flex-sm-grow-0 fw-medium"
                       onClick={() => naviagte("/user/appointments")}
                     >
-                      <i className="fa-solid fa-list"></i> Appointments
+                      <i className="fa-solid fa-list me-1"></i> Appointments
                     </button>
-                    <button className="btn btn-danger" onClick={handleLogout}>
-                      <i className="fa-solid fa-power-off"></i> LOGOUT
+                    <button className="btn btn-danger btn-sm px-3 flex-grow-1 flex-sm-grow-0 fw-medium" onClick={handleLogout}>
+                      <i className="fa-solid fa-power-off me-1"></i> LOGOUT
                     </button>
                   </div>
                 </div>
