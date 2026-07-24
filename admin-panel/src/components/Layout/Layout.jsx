@@ -8,13 +8,13 @@ const Layout = ({ children }) => {
 
   return (
     <div className="admin-layout">
-      {/* Mobile Top Header / Toggle Bar */}
-      <div className="admin-mobile-nav-bar">
+      {/* Mobile Sticky Navbar Header */}
+      <div className="admin-mobile-nav-bar d-md-none">
         <button
           type="button"
           className="hamburger-btn"
-          onClick={() => setSidebarOpen((prev) => !prev)}
-          aria-label="Toggle Menu"
+          onClick={() => setSidebarOpen(true)}
+          aria-label="Open Menu"
         >
           <span></span>
           <span></span>
@@ -23,28 +23,32 @@ const Layout = ({ children }) => {
         <span className="mobile-brand-title">Admin Panel</span>
       </div>
 
-      {/* Dark Overlay Backdrop for Mobile */}
+      {/* Backdrop Overlay */}
       {sidebarOpen && (
         <div
-          className="admin-sidebar-overlay"
+          className="sidebar-backdrop"
           onClick={() => setSidebarOpen(false)}
         ></div>
       )}
 
-      {/* Modern Slide-over Drawer Sidebar */}
+      {/* Slide-over Sidebar Drawer */}
       <div className={`admin-sidebar ${sidebarOpen ? "open" : ""}`}>
-        <div className="sidebar-mobile-header d-md-none">
-          <span className="fw-bold fs-5 text-white">Navigation</span>
+        {/* Mobile Header Inside Drawer */}
+        <div className="sidebar-drawer-header d-flex justify-content-between align-items-center p-3 border-bottom border-secondary d-md-none">
+          <h5 className="m-0 text-white font-weight-bold">Navigation</h5>
           <button
+            type="button"
             className="btn-close btn-close-white"
             onClick={() => setSidebarOpen(false)}
             aria-label="Close"
           ></button>
         </div>
+
+        {/* Navigation Menus */}
         <Menus onLinkClick={() => setSidebarOpen(false)} />
       </div>
 
-      {/* Main Content Area */}
+      {/* Main Page Content */}
       <div className="admin-page-body">
         <div className="admin-content">{children}</div>
         <Footer />

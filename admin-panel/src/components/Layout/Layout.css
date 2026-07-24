@@ -1,40 +1,49 @@
-/* Base Layout Setup */
+/* General Layout Setup */
 .admin-layout {
   position: relative;
   min-height: 100vh;
   background-color: #f8f9fa;
 }
 
-/* Hamburger Button (Mobile Only Default) */
-.hamburger-btn {
-  display: none;
-  position: fixed;
-  top: 14px;
-  left: 14px;
-  z-index: 1001;
-  width: 40px;
-  height: 40px;
-  background: #1f2937;
-  border: none;
-  border-radius: 8px;
-  flex-direction: column;
+/* Mobile Sticky Top Navigation Bar */
+.admin-mobile-nav-bar {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  background-color: #1f2937;
+  padding: 12px 18px;
+  position: sticky;
+  top: 0;
+  z-index: 998;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-brand-title {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.hamburger-btn {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 4px;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 4px;
 }
 
 .hamburger-btn span {
   display: block;
-  width: 20px;
+  width: 22px;
   height: 2px;
   background: #ffffff;
   border-radius: 2px;
-  transition: all 0.3s ease;
 }
 
-/* Desktop Sidebar Styles */
+/* Sidebar Styles */
 .admin-sidebar {
   position: fixed;
   top: 0;
@@ -42,28 +51,25 @@
   width: 260px;
   height: 100vh;
   z-index: 1000;
-  background-color: #111827;
+  background-color: #1f2937;
   overflow-y: auto;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Page Body Layout (Offset for Sidebar on Desktop) */
+/* Content Area */
 .admin-page-body {
   margin-left: 260px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  transition: margin-left 0.3s ease;
 }
 
 .admin-content {
   padding: 24px;
   flex: 1;
-  box-sizing: border-box;
 }
 
-/* Mobile Overlay Backdrop */
+/* Backdrop Overlay for Mobile */
 .sidebar-backdrop {
   position: fixed;
   top: 0;
@@ -75,15 +81,11 @@
   z-index: 999;
 }
 
-/* Mobile Screens Adjustments */
+/* Mobile Responsiveness (<= 768px) */
 @media only screen and (max-width: 768px) {
-  .hamburger-btn {
-    display: flex;
-  }
-
   .admin-sidebar {
     transform: translateX(-100%);
-    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.25);
   }
 
   .admin-sidebar.open {
@@ -92,7 +94,6 @@
 
   .admin-page-body {
     margin-left: 0;
-    padding-top: 65px;
   }
 
   .admin-content {
