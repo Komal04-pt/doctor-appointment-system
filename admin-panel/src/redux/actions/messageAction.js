@@ -5,7 +5,7 @@ export const getAllMessages = createAsyncThunk(
   "message/getAllMessages",
   async (_, thunkApi) => {
     try {
-      const res = await API.get("/webmessage/get-all");
+      const res = await API.get("/api/v1/webmessage/get-all");
       return res.data;
     } catch (error) {
       const message =
@@ -21,7 +21,7 @@ export const replyToMessage = createAsyncThunk(
   "message/replyToMessage",
   async ({ id, adminReply }, thunkApi) => {
     try {
-      const res = await API.patch(`/webmessage/reply/${id}`, { adminReply });
+      const res = await API.patch(`/api/v1/webmessage/reply/${id}`, { adminReply });
       return res.data;
     } catch (error) {
       const message =
@@ -37,7 +37,7 @@ export const deleteMessage = createAsyncThunk(
   "message/deleteMessage",
   async (id, thunkApi) => {
     try {
-      const res = await API.delete(`/webmessage/delete/${id}`);
+      const res = await API.delete(`/api/v1/webmessage/delete/${id}`);
       return res.data;
     } catch (error) {
       const message =
