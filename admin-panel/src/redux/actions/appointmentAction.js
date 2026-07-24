@@ -6,7 +6,7 @@ export const getAllAppointments = createAsyncThunk(
   "appointment/getAllAppointments",
   async (_, thunkApi) => {
     try {
-      const res = await API.get("/appointment/get-all");
+      const res = await API.get("/api/v1/appointment/get-all");
       return res.data;
     } catch (error) {
       const message =
@@ -23,7 +23,7 @@ export const getAppointmentDetails = createAsyncThunk(
   "appointment/getDoctorDetails",
   async (id, thunkApi) => {
     try {
-      const res = await API.get(`/appointment/get-details/${id}`);
+      const res = await API.get(`/api/v1/appointment/get-details/${id}`);
       return res.data;
     } catch (error) {
       const message =
@@ -35,12 +35,12 @@ export const getAppointmentDetails = createAsyncThunk(
   }
 );
 
-//udpate status appointment statuys
+//update status appointment status
 export const updateAppointmentStatus = createAsyncThunk(
   "appointment/updateAppointmentStatus",
   async ({ id, appointmentStatus }, thunkApi) => {
     try {
-      const res = await API.patch(`/appointment/update-status/${id}`, {
+      const res = await API.patch(`/api/v1/appointment/update-status/${id}`, {
         appointmentStatus,
       });
       return res.data;
