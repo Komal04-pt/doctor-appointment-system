@@ -52,7 +52,6 @@ const DoctorDetails = () => {
     }
   }, [doctor]);
 
-  //update
   const handleUpdate = () => {
     const formData = new FormData();
     formData.append("name", name);
@@ -68,7 +67,7 @@ const DoctorDetails = () => {
     formData.append("gender", gender);
     dispatch(updateDoctor({ id, formData }));
     if (success) {
-      toast.success("Doctor Up[dated");
+      toast.success("Doctor Updated");
       navigate("/all-doctors");
     }
     if (error) {
@@ -76,7 +75,6 @@ const DoctorDetails = () => {
     }
   };
 
-  //delete doctor
   const handleDelete = () => {
     const confirm = window.confirm("Are you Sure Want To Delete This Doctor ?");
     if (confirm) {
@@ -94,7 +92,7 @@ const DoctorDetails = () => {
   const handleUpdateStatus = (id, availabeStatus) => {
     dispatch(updateStatus({ id, availabeStatus }));
     if (success) {
-      toast.success("Doctor STatus Updated!");
+      toast.success("Doctor Status Updated!");
       navigate("/all-doctors");
     }
     if (error) {
@@ -108,10 +106,8 @@ const DoctorDetails = () => {
         <img
           src={doctor.image}
           alt="docimage"
-          className="bg-info border rounded-3"
-          height={200}
-          width={200}
-          style={{ objectFit: "cover", maxWidth: "100%" }}
+          className="rounded-circle border shadow-sm"
+          style={{ width: "90px", height: "90px", objectFit: "cover" }}
         />
       );
     }
@@ -120,17 +116,15 @@ const DoctorDetails = () => {
         <img
           src={`data:image/jpeg;base64,${doctor.image}`}
           alt="docimage"
-          className="bg-info border rounded-3"
-          height={200}
-          width={200}
-          style={{ objectFit: "cover", maxWidth: "100%" }}
+          className="rounded-circle border shadow-sm"
+          style={{ width: "90px", height: "90px", objectFit: "cover" }}
         />
       );
     }
     return (
       <div
-        className="bg-info border rounded-3 d-flex align-items-center justify-content-center text-white fw-bold"
-        style={{ height: 200, width: 200, fontSize: 60, maxWidth: "100%" }}
+        className="bg-primary text-white rounded-circle border shadow-sm d-flex align-items-center justify-content-center fw-bold"
+        style={{ width: "90px", height: "90px", fontSize: "2rem" }}
       >
         {doctor?.name?.charAt(0) || "?"}
       </div>
@@ -139,139 +133,126 @@ const DoctorDetails = () => {
 
   return (
     <Layout>
-      <div className="d-flex flex-wrap gap-2 p-3 justify-content-between align-items-center bg-light">
-        <h1 style={{ fontSize: "1.5rem" }}>Doctor Details</h1>
-        <div>
-          <button
-            className="btn btn-warning ms-0 ms-sm-3"
-            onClick={() => setEdit(!edit)}
-          >
-            {edit ? "EDIT" : "CANCEL"}
-          </button>
-          <button
-            className="btn btn-danger ms-3"
-            onClick={() => handleDelete(doctor?._id)}
-          >
-            DELETE
-          </button>
-        </div>
-      </div>
-      <div className="p-3" style={{ maxWidth: "600px" }}>
-        {renderDoctorImage()}
-        <InputForm
-          label={"Name"}
-          value={name}
-          setValue={setName}
-          disabled={edit}
-        />
-        <InputForm
-          label={"Email"}
-          value={email}
-          setValue={setEmail}
-          disabled={edit}
-        />
-        <InputForm
-          label={"Degree"}
-          value={degree}
-          setValue={setDegree}
-          disabled={edit}
-        />
+      <div className="container-fluid py-2 px-1 px-md-3">
+        <div className="card border-0 shadow-sm rounded-3 p-3 mx-auto" style={{ maxWidth: "600px" }}>
+          
+          {/* Header Bar */}
+          <div className="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+            <h2 className="m-0 text-dark fw-bold" style={{ fontSize: "1.2rem" }}>
+              Doctor Details
+            </h2>
+            <div className="d-flex gap-2">
+              <button
+                className="btn btn-sm btn-warning fw-semibold px-3"
+                onClick={() => setEdit(!edit)}
+              >
+                {edit ? "EDIT" : "CANCEL"}
+              </button>
+              <button
+                className="btn btn-sm btn-danger fw-semibold px-3"
+                onClick={() => handleDelete(doctor?._id)}
+              >
+                DELETE
+              </button>
+            </div>
+          </div>
 
-        <InputSelect
-          label={"Spceciality"}
-          value={speciality}
-          setValue={setSpeciality}
-          disabled={edit}
-          options={[
-            "Select Spceciality",
-            "Genral",
-            "Neurology",
-            "Cardiology",
-            "Dermatology",
-            "Pediatrics",
-            "Orthopedics",
-            "dental",
-            "Mental",
-            "eye",
-            "Gynecology",
-          ]}
-        />
+          {/* Profile Image & Avatar Header */}
+          <div className="d-flex align-items-center gap-3 mb-3">
+            {renderDoctorImage()}
+            <div>
+              <h3 className="m-0 text-dark fw-bold" style={{ fontSize: "1.1rem" }}>
+                {doctor?.name || "Doctor Profile"}
+              </h3>
+              <span className="badge bg-light text-secondary border mt-1 fs-6">
+                {doctor?.speciality || "General"}
+              </span>
+            </div>
+          </div>
 
-        <InputSelect
-          label={"GENDER"}
-          value={gender}
-          setValue={setGender}
-          options={["Select Gender", "Male", "Female"]}
-          disabled={edit}
-        />
-        <InputForm
-          label={"experience"}
-          value={experience}
-          setValue={setExperience}
-          disabled={edit}
-        />
-        <InputForm
-          label={"Fees"}
-          value={fees}
-          setValue={setFees}
-          disabled={edit}
-        />
-        <InputForm
-          label={"About"}
-          value={about}
-          setValue={setAbout}
-          disabled={edit}
-        />
-        <InputForm
-          label={"Phone"}
-          value={phone}
-          setValue={setPhone}
-          disabled={edit}
-        />
-        <InputForm
-          label={"Address"}
-          value={address}
-          setValue={setAddress}
-          disabled={edit}
-        />
-        <div className="mb-3">
-          <label htmlFor="form-label">Select Image File : </label>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => setImage(e.target.files[0])}
-            className="form-control"
-          />
-        </div>
-        <div
-          className="d-flex flex-wrap gap-2"
-          style={{ marginBottom: "50px" }}
-        >
-          <button
-            className="btn btn-primary"
-            onClick={() => handleUpdate(doctor?._id)}
-          >
-            UPDATE DOCTOR
-          </button>
-          {doctor?.available ? (
-            <button
-              className="btn btn-danger"
-              onClick={() =>
-                handleUpdateStatus(doctor?._id, { availabeStatus: "false" })
-              }
-            >
-              MARK AS Un-Available
-            </button>
-          ) : (
-            <button
-              className="btn btn-success"
-              onClick={() =>
-                handleUpdateStatus(doctor?._id, { availabeStatus: "true" })
-              }
-            >
-              MARK AS Available
-            </button>
-          )}
+          {/* Form Inputs Container */}
+          <div className="d-flex flex-column gap-2">
+            <InputForm label={"Name"} value={name} setValue={setName} disabled={edit} />
+            <InputForm label={"Email"} value={email} setValue={setEmail} disabled={edit} />
+            <InputForm label={"Degree"} value={degree} setValue={setDegree} disabled={edit} />
+
+            <InputSelect
+              label={"Speciality"}
+              value={speciality}
+              setValue={setSpeciality}
+              disabled={edit}
+              options={[
+                "Select Speciality",
+                "General",
+                "Neurology",
+                "Cardiology",
+                "Dermatology",
+                "Pediatrics",
+                "Orthopedics",
+                "Dental",
+                "Mental",
+                "Eye",
+                "Gynecology",
+              ]}
+            />
+
+            <InputSelect
+              label={"Gender"}
+              value={gender}
+              setValue={setGender}
+              options={["Select Gender", "Male", "Female"]}
+              disabled={edit}
+            />
+
+            <InputForm label={"Experience"} value={experience} setValue={setExperience} disabled={edit} />
+            <InputForm label={"Fees"} value={fees} setValue={setFees} disabled={edit} />
+            <InputForm label={"About"} value={about} setValue={setAbout} disabled={edit} />
+            <InputForm label={"Phone"} value={phone} setValue={setPhone} disabled={edit} />
+            <InputForm label={"Address"} value={address} setValue={setAddress} disabled={edit} />
+
+            {!edit && (
+              <div className="mt-2">
+                <label className="form-label text-muted small mb-1">Select Image File</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => setImage(e.target.files[0])}
+                  className="form-control form-control-sm"
+                />
+              </div>
+            )}
+
+            {/* Actions Footer */}
+            <div className="d-flex flex-wrap gap-2 mt-3 pt-2 border-top">
+              <button
+                className="btn btn-primary btn-sm flex-fill fw-semibold"
+                onClick={() => handleUpdate(doctor?._id)}
+                disabled={edit}
+              >
+                UPDATE DOCTOR
+              </button>
+              {doctor?.available ? (
+                <button
+                  className="btn btn-outline-danger btn-sm flex-fill fw-semibold"
+                  onClick={() =>
+                    handleUpdateStatus(doctor?._id, { availabeStatus: "false" })
+                  }
+                >
+                  MARK AS Un-Available
+                </button>
+              ) : (
+                <button
+                  className="btn btn-outline-success btn-sm flex-fill fw-semibold"
+                  onClick={() =>
+                    handleUpdateStatus(doctor?._id, { availabeStatus: "true" })
+                  }
+                >
+                  MARK AS Available
+                </button>
+              )}
+            </div>
+          </div>
+
         </div>
       </div>
     </Layout>
