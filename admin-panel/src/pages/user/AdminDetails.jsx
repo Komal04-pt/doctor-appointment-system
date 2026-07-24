@@ -71,65 +71,82 @@ const AdminDetails = () => {
 
   return (
     <Layout>
-      <div className="d-flex flex-wrap p-3 justify-content-between align-items-center bg-light">
-        <h1 style={{ fontSize: "1.5rem" }}>Admin Details</h1>
-        <div>
-          <button
-            className="btn btn-warning ms-3"
-            onClick={() => setEdit(!edit)}
-          >
-            {edit ? "EDIT" : "CANCEL"}
-          </button>
-          <button
-            className="btn btn-danger ms-3"
-            onClick={handleDeleteAdmin}
-            disabled={isSelfProfile}
-            title={
-              isSelfProfile
-                ? "You cannot delete your own account"
-                : "Delete this admin account"
-            }
-          >
-            DELETE ADMIN ACCOUNT
-          </button>
+      <div className="container py-3 py-md-4" style={{ minHeight: "75vh", maxWidth: "650px" }}>
+        
+        {/* Main Card Container */}
+        <div className="card shadow-sm border-0 p-3 p-md-4 bg-white rounded-3">
+          
+          {/* Header Section */}
+          <div className="d-flex flex-wrap justify-content-between align-items-center pb-3 border-bottom mb-3 gap-2">
+            <h4 className="mb-0 text-secondary font-weight-bold" style={{ fontSize: "1.25rem" }}>
+              Admin Details
+            </h4>
+
+            {/* Buttons in One Single Row */}
+            <div className="d-flex align-items-center gap-2">
+              <button
+                className={`btn btn-sm ${edit ? "btn-warning text-dark" : "btn-secondary"} fw-semibold`}
+                onClick={() => setEdit(!edit)}
+              >
+                {edit ? "EDIT" : "CANCEL"}
+              </button>
+              <button
+                className="btn btn-sm btn-danger fw-semibold"
+                onClick={handleDeleteAdmin}
+                disabled={isSelfProfile}
+                title={
+                  isSelfProfile
+                    ? "You cannot delete your own account"
+                    : "Delete this admin account"
+                }
+              >
+                DELETE ACCOUNT
+              </button>
+            </div>
+          </div>
+
+          {/* Self Profile Alert */}
+          {isSelfProfile && (
+            <div className="alert alert-info small py-2 px-3 mb-3 border-0 bg-light-info text-info">
+              <i className="bi bi-info-circle me-1"></i> This is your own account. You cannot delete your own admin access.
+            </div>
+          )}
+
+          {/* Form Fields Section */}
+          <div className="d-flex flex-column gap-2">
+            <InputForm
+              label={"Full Name"}
+              value={name}
+              setValue={setName}
+              disabled={edit}
+            />
+            <InputForm
+              label={"Email"}
+              value={admin?.email || ""}
+              setValue={() => {}}
+              disabled={true}
+            />
+            <InputForm
+              label={"Phone"}
+              value={phone}
+              setValue={setPhone}
+              disabled={edit}
+            />
+
+            {!edit && (
+              <div className="mt-3 text-end">
+                <button
+                  className="btn btn-primary btn-sm px-4 fw-semibold"
+                  onClick={handleUpdate}
+                  disabled={loading}
+                >
+                  {loading ? "Saving..." : "SAVE CHANGES"}
+                </button>
+              </div>
+            )}
+          </div>
+
         </div>
-      </div>
-
-      {isSelfProfile && (
-        <div className="alert alert-info mx-3 mt-3 mb-0">
-          This is your own account. You cannot delete your own admin access.
-        </div>
-      )}
-
-      <div className="p-3" style={{ maxWidth: "500px" }}>
-        <InputForm
-          label={"Full Name"}
-          value={name}
-          setValue={setName}
-          disabled={edit}
-        />
-        <InputForm
-          label={"Email"}
-          value={admin?.email || ""}
-          setValue={() => {}}
-          disabled={true}
-        />
-        <InputForm
-          label={"Phone"}
-          value={phone}
-          setValue={setPhone}
-          disabled={edit}
-        />
-
-        {!edit && (
-          <button
-            className="btn btn-primary mt-2"
-            onClick={handleUpdate}
-            disabled={loading}
-          >
-            {loading ? "Saving..." : "SAVE CHANGES"}
-          </button>
-        )}
       </div>
     </Layout>
   );
