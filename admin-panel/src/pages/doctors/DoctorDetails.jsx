@@ -107,7 +107,7 @@ const DoctorDetails = () => {
           src={doctor.image}
           alt="docimage"
           className="rounded-circle border shadow-sm"
-          style={{ width: "90px", height: "90px", objectFit: "cover" }}
+          style={{ width: "80px", height: "80px", objectFit: "cover" }}
         />
       );
     }
@@ -117,14 +117,14 @@ const DoctorDetails = () => {
           src={`data:image/jpeg;base64,${doctor.image}`}
           alt="docimage"
           className="rounded-circle border shadow-sm"
-          style={{ width: "90px", height: "90px", objectFit: "cover" }}
+          style={{ width: "80px", height: "80px", objectFit: "cover" }}
         />
       );
     }
     return (
       <div
         className="bg-primary text-white rounded-circle border shadow-sm d-flex align-items-center justify-content-center fw-bold"
-        style={{ width: "90px", height: "90px", fontSize: "2rem" }}
+        style={{ width: "80px", height: "80px", fontSize: "1.8rem" }}
       >
         {doctor?.name?.charAt(0) || "?"}
       </div>
@@ -133,12 +133,12 @@ const DoctorDetails = () => {
 
   return (
     <Layout>
-      <div className="container-fluid py-2 px-1 px-md-3">
-        <div className="card border-0 shadow-sm rounded-3 p-3 mx-auto" style={{ maxWidth: "600px" }}>
+      <div className="container-fluid py-3 px-2 px-md-4">
+        <div className="card border-0 shadow-sm rounded-3 p-3 p-md-4 mx-auto" style={{ maxWidth: "900px" }}>
           
           {/* Header Bar */}
-          <div className="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
-            <h2 className="m-0 text-dark fw-bold" style={{ fontSize: "1.2rem" }}>
+          <div className="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+            <h2 className="m-0 text-dark fw-bold" style={{ fontSize: "1.3rem" }}>
               Doctor Details
             </h2>
             <div className="d-flex gap-2">
@@ -157,11 +157,11 @@ const DoctorDetails = () => {
             </div>
           </div>
 
-          {/* Profile Image & Avatar Header */}
-          <div className="d-flex align-items-center gap-3 mb-3">
+          {/* Profile Header */}
+          <div className="d-flex align-items-center gap-3 mb-4">
             {renderDoctorImage()}
             <div>
-              <h3 className="m-0 text-dark fw-bold" style={{ fontSize: "1.1rem" }}>
+              <h3 className="m-0 text-dark fw-bold" style={{ fontSize: "1.2rem" }}>
                 {doctor?.name || "Doctor Profile"}
               </h3>
               <span className="badge bg-light text-secondary border mt-1 fs-6">
@@ -170,48 +170,65 @@ const DoctorDetails = () => {
             </div>
           </div>
 
-          {/* Form Inputs Container */}
-          <div className="d-flex flex-column gap-2">
-            <InputForm label={"Name"} value={name} setValue={setName} disabled={edit} />
-            <InputForm label={"Email"} value={email} setValue={setEmail} disabled={edit} />
-            <InputForm label={"Degree"} value={degree} setValue={setDegree} disabled={edit} />
-
-            <InputSelect
-              label={"Speciality"}
-              value={speciality}
-              setValue={setSpeciality}
-              disabled={edit}
-              options={[
-                "Select Speciality",
-                "General",
-                "Neurology",
-                "Cardiology",
-                "Dermatology",
-                "Pediatrics",
-                "Orthopedics",
-                "Dental",
-                "Mental",
-                "Eye",
-                "Gynecology",
-              ]}
-            />
-
-            <InputSelect
-              label={"Gender"}
-              value={gender}
-              setValue={setGender}
-              options={["Select Gender", "Male", "Female"]}
-              disabled={edit}
-            />
-
-            <InputForm label={"Experience"} value={experience} setValue={setExperience} disabled={edit} />
-            <InputForm label={"Fees"} value={fees} setValue={setFees} disabled={edit} />
-            <InputForm label={"About"} value={about} setValue={setAbout} disabled={edit} />
-            <InputForm label={"Phone"} value={phone} setValue={setPhone} disabled={edit} />
-            <InputForm label={"Address"} value={address} setValue={setAddress} disabled={edit} />
+          {/* 2-Column Responsive Grid Form */}
+          <div className="row g-3">
+            <div className="col-12 col-md-6">
+              <InputForm label={"Name"} value={name} setValue={setName} disabled={edit} />
+            </div>
+            <div className="col-12 col-md-6">
+              <InputForm label={"Email"} value={email} setValue={setEmail} disabled={edit} />
+            </div>
+            <div className="col-12 col-md-6">
+              <InputForm label={"Degree"} value={degree} setValue={setDegree} disabled={edit} />
+            </div>
+            <div className="col-12 col-md-6">
+              <InputSelect
+                label={"Speciality"}
+                value={speciality}
+                setValue={setSpeciality}
+                disabled={edit}
+                options={[
+                  "Select Speciality",
+                  "General",
+                  "Neurology",
+                  "Cardiology",
+                  "Dermatology",
+                  "Pediatrics",
+                  "Orthopedics",
+                  "Dental",
+                  "Mental",
+                  "Eye",
+                  "Gynecology",
+                ]}
+              />
+            </div>
+            <div className="col-12 col-md-6">
+              <InputSelect
+                label={"Gender"}
+                value={gender}
+                setValue={setGender}
+                options={["Select Gender", "Male", "Female"]}
+                disabled={edit}
+              />
+            </div>
+            <div className="col-12 col-md-6">
+              <InputForm label={"Experience"} value={experience} setValue={setExperience} disabled={edit} />
+            </div>
+            <div className="col-12 col-md-6">
+              <InputForm label={"Fees"} value={fees} setValue={setFees} disabled={edit} />
+            </div>
+            <div className="col-12 col-md-6">
+              <InputForm label={"Phone"} value={phone} setValue={setPhone} disabled={edit} />
+            </div>
+            <div className="col-12">
+              <InputForm label={"Address"} value={address} setValue={setAddress} disabled={edit} />
+            </div>
+            <div className="col-12">
+              <InputForm label={"About"} value={about} setValue={setAbout} disabled={edit} />
+            </div>
 
             {!edit && (
-              <div className="mt-2">
+              <div className="col-12 mt-2">
                 <label className="form-label text-muted small mb-1">Select Image File</label>
                 <input
                   type="file"
@@ -221,36 +238,36 @@ const DoctorDetails = () => {
                 />
               </div>
             )}
+          </div>
 
-            {/* Actions Footer */}
-            <div className="d-flex flex-wrap gap-2 mt-3 pt-2 border-top">
+          {/* Action Footer */}
+          <div className="d-flex flex-wrap gap-2 mt-4 pt-3 border-top">
+            <button
+              className="btn btn-primary btn-sm px-4 fw-semibold"
+              onClick={() => handleUpdate(doctor?._id)}
+              disabled={edit}
+            >
+              UPDATE DOCTOR
+            </button>
+            {doctor?.available ? (
               <button
-                className="btn btn-primary btn-sm flex-fill fw-semibold"
-                onClick={() => handleUpdate(doctor?._id)}
-                disabled={edit}
+                className="btn btn-outline-danger btn-sm px-4 fw-semibold"
+                onClick={() =>
+                  handleUpdateStatus(doctor?._id, { availabeStatus: "false" })
+                }
               >
-                UPDATE DOCTOR
+                MARK AS Un-Available
               </button>
-              {doctor?.available ? (
-                <button
-                  className="btn btn-outline-danger btn-sm flex-fill fw-semibold"
-                  onClick={() =>
-                    handleUpdateStatus(doctor?._id, { availabeStatus: "false" })
-                  }
-                >
-                  MARK AS Un-Available
-                </button>
-              ) : (
-                <button
-                  className="btn btn-outline-success btn-sm flex-fill fw-semibold"
-                  onClick={() =>
-                    handleUpdateStatus(doctor?._id, { availabeStatus: "true" })
-                  }
-                >
-                  MARK AS Available
-                </button>
-              )}
-            </div>
+            ) : (
+              <button
+                className="btn btn-outline-success btn-sm px-4 fw-semibold"
+                onClick={() =>
+                  handleUpdateStatus(doctor?._id, { availabeStatus: "true" })
+                }
+              >
+                MARK AS Available
+              </button>
+            )}
           </div>
 
         </div>
