@@ -1,23 +1,28 @@
+/* Base Layout Setup */
 .admin-layout {
   position: relative;
+  min-height: 100vh;
+  background-color: #f8f9fa;
 }
 
+/* Hamburger Button (Mobile Only Default) */
 .hamburger-btn {
+  display: none;
   position: fixed;
-  top: 16px;
-  left: 16px;
+  top: 14px;
+  left: 14px;
   z-index: 1001;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   background: #1f2937;
   border: none;
   border-radius: 8px;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 4px;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hamburger-btn span {
@@ -26,51 +31,71 @@
   height: 2px;
   background: #ffffff;
   border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
+/* Desktop Sidebar Styles */
 .admin-sidebar {
   position: fixed;
   top: 0;
-  left: -280px;
+  left: 0;
   width: 260px;
   height: 100vh;
   z-index: 1000;
+  background-color: #111827;
   overflow-y: auto;
-  transition: left 0.25s ease;
-  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
 }
 
-.admin-sidebar.open {
-  left: 0;
+/* Page Body Layout (Offset for Sidebar on Desktop) */
+.admin-page-body {
+  margin-left: 260px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease;
 }
 
+.admin-content {
+  padding: 24px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+/* Mobile Overlay Backdrop */
 .sidebar-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
   z-index: 999;
 }
 
-.admin-page-body {
-  width: 100%;
-  padding-top: 70px;
-  box-sizing: border-box;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.admin-content {
-  padding: 0 24px;
-  box-sizing: border-box;
-  flex: 1;
-}
-
+/* Mobile Screens Adjustments */
 @media only screen and (max-width: 768px) {
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .admin-sidebar {
+    transform: translateX(-100%);
+    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .admin-page-body {
+    margin-left: 0;
+    padding-top: 65px;
+  }
+
   .admin-content {
-    padding: 0 14px;
+    padding: 16px 12px;
   }
 }
