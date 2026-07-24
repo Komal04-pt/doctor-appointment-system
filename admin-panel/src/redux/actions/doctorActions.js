@@ -6,7 +6,7 @@ export const getAllDoctors = createAsyncThunk(
   "doctor/getAllDoctrors",
   async (_, thunkApi) => {
     try {
-      const res = await API.get("/doctor/get-all");
+      const res = await API.get("/api/v1/doctor/get-all");
       return res.data;
     } catch (error) {
       const message =
@@ -21,7 +21,7 @@ export const getDoctorDetails = createAsyncThunk(
   "doctor/getDoctorDetails",
   async (id, thunkApi) => {
     try {
-      const res = await API.get(`/doctor/get-details/${id}`);
+      const res = await API.get(`/api/v1/doctor/get-details/${id}`);
       return res.data;
     } catch (error) {
       const message =
@@ -38,7 +38,7 @@ export const addDoctor = createAsyncThunk(
   "doctor/AddDoctor",
   async (formData, thunkApi) => {
     try {
-      const res = await API.post("/doctor/add", formData, {
+      const res = await API.post("/api/v1/doctor/add", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -52,12 +52,12 @@ export const addDoctor = createAsyncThunk(
   }
 );
 
-//ADD DOCTOR
+//UPDATE DOCTOR
 export const updateDoctor = createAsyncThunk(
   "doctor/updateDoctor",
   async ({ id, formData }, thunkApi) => {
     try {
-      const res = await API.patch(`/doctor/update/${id}`, formData, {
+      const res = await API.patch(`/api/v1/doctor/update/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -76,7 +76,7 @@ export const deleteDoctor = createAsyncThunk(
   "doctor/deleteDoctor",
   async (id, thunkApi) => {
     try {
-      const res = await API.delete(`/doctor/delete/${id}`);
+      const res = await API.delete(`/api/v1/doctor/delete/${id}`);
       return res.data;
     } catch (error) {
       const message =
@@ -86,13 +86,13 @@ export const deleteDoctor = createAsyncThunk(
   }
 );
 
-//udpate status DOCTOR
+//update status DOCTOR
 export const updateStatus = createAsyncThunk(
   "doctor/updateStatus",
   async ({ id, availabeStatus }, thunkApi) => {
     try {
       const res = await API.patch(
-        `/doctor/update-status/${id}`,
+        `/api/v1/doctor/update-status/${id}`,
         availabeStatus
       );
       return res.data;
