@@ -26,65 +26,86 @@ const UserDetails = () => {
 
   return (
     <Layout>
-      <div className="container py-4" style={{ minHeight: "75vh" }}>
+      <div className="container py-3 py-md-4" style={{ minHeight: "75vh" }}>
 
-        <div className="card p-4 shadow-sm border-0 mb-4 bg-white">
-          <h4 className="mb-4 text-secondary border-bottom pb-2">User Profile Details</h4>
+        {/* User Profile Card */}
+        <div className="card p-3 p-md-4 shadow-sm border-0 mb-4 bg-white rounded-3">
+          <h5 className="mb-3 text-secondary border-bottom pb-2 font-weight-bold">
+            User Profile Details
+          </h5>
+
           <div className="row align-items-center">
-            <div className="col-md-3 text-center mb-3 mb-md-0">
+            {/* Avatar Section */}
+            <div className="col-12 col-md-3 text-center mb-3 mb-md-0">
               {user?.image ? (
                 <img
                   src={`data:image/jpeg;base64,${user?.image}`}
                   alt="userImage"
-                  className="rounded-circle border shadow-sm"
-                  style={{ width: "150px", height: "150px", objectFit: "cover" }}
+                  className="rounded-circle border shadow-sm img-fluid"
+                  style={{ width: "90px", height: "90px", objectFit: "cover" }}
                 />
               ) : (
                 <div
                   className="rounded-circle bg-info d-flex align-items-center justify-content-center text-white mx-auto shadow-sm"
-                  style={{ height: 150, width: 150, fontSize: 54, fontWeight: "bold" }}
+                  style={{ height: "90px", width: "90px", fontSize: "36px", fontWeight: "bold" }}
                 >
                   {getInitials(user?.name)}
                 </div>
               )}
             </div>
 
-            <div className="col-md-9">
-              <div className="row g-3">
-                <div className="col-sm-6">
-                  <h6 className="text-muted mb-1">NAME</h6>
-                  <p className="fw-semibold text-dark fs-5 mb-0">{user?.name}</p>
+            {/* User Info Details Section */}
+            <div className="col-12 col-md-9">
+              <div className="row g-2 g-md-3 text-start">
+                <div className="col-12 col-sm-6 mb-2 mb-sm-0">
+                  <h6 className="text-muted mb-0 small font-weight-bold text-uppercase" style={{ fontSize: "11px", letterSpacing: "0.5px" }}>
+                    NAME
+                  </h6>
+                  <p className="fw-semibold text-dark mb-0 fs-6">{user?.name || "NA"}</p>
                 </div>
-                <div className="col-sm-6">
-                  <h6 className="text-muted mb-1">EMAIL</h6>
-                  <p className="fw-semibold text-dark fs-5 mb-0">{user?.email}</p>
+
+                <div className="col-12 col-sm-6 mb-2 mb-sm-0">
+                  <h6 className="text-muted mb-0 small font-weight-bold text-uppercase" style={{ fontSize: "11px", letterSpacing: "0.5px" }}>
+                    EMAIL
+                  </h6>
+                  <p className="fw-semibold text-dark mb-0 fs-6 text-break">{user?.email || "NA"}</p>
                 </div>
-                <div className="col-sm-6">
-                  <h6 className="text-muted mb-1">PHONE</h6>
-                  <p className="fw-semibold text-dark fs-5 mb-0">{user?.phone || "NA"}</p>
+
+                <div className="col-12 col-sm-6 mb-2 mb-sm-0">
+                  <h6 className="text-muted mb-0 small font-weight-bold text-uppercase" style={{ fontSize: "11px", letterSpacing: "0.5px" }}>
+                    PHONE
+                  </h6>
+                  <p className="fw-semibold text-dark mb-0 fs-6">{user?.phone || "NA"}</p>
                 </div>
-                <div className="col-sm-6">
-                  <h6 className="text-muted mb-1">ADDRESS</h6>
-                  <p className="fw-semibold text-dark fs-5 mb-0">{user?.address || "NA"}</p>
+
+                <div className="col-12 col-sm-6">
+                  <h6 className="text-muted mb-0 small font-weight-bold text-uppercase" style={{ fontSize: "11px", letterSpacing: "0.5px" }}>
+                    ADDRESS
+                  </h6>
+                  <p className="fw-semibold text-dark mb-0 fs-6">{user?.address || "NA"}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="card p-4 shadow-sm border-0 bg-white">
-          <h4 className="mb-3 text-secondary border-bottom pb-2">All Booked Appointments</h4>
+        {/* Booked Appointments Card */}
+        <div className="card p-3 p-md-4 shadow-sm border-0 bg-white rounded-3">
+          <h5 className="mb-3 text-secondary border-bottom pb-2 font-weight-bold">
+            All Booked Appointments
+          </h5>
+
           <div className="table-responsive">
-            <table className="table table-hover table-striped align-middle mb-0">
+            <table className="table table-hover table-striped align-middle mb-0 text-nowrap">
               <thead className="table-light">
-                <tr>
-                  <th className="py-3">SN</th>
-                  <th className="py-3">Appointment Date</th>
-                  <th className="py-3">Appointment Time</th>
-                  <th className="py-3">DOCTOR NAME</th>
-                  <th className="py-3">FEES</th>
-                  <th className="py-3">STATUS</th>
-                  <th className="py-3">PAYMENT</th>
+                <tr className="small text-uppercase text-muted">
+                  <th className="py-2">SN</th>
+                  <th className="py-2">Appointment Date</th>
+                  <th className="py-2">Appointment Time</th>
+                  <th className="py-2">DOCTOR NAME</th>
+                  <th className="py-2">FEES</th>
+                  <th className="py-2">STATUS</th>
+                  <th className="py-2">PAYMENT</th>
                 </tr>
               </thead>
               <tbody>
@@ -100,7 +121,7 @@ const UserDetails = () => {
                       <td className="fw-medium">{a?.amount}/- RS</td>
                       <td>
                         <span
-                          className={`badge px-3 py-2 text-capitalize ${
+                          className={`badge px-2 py-1.5 text-capitalize ${
                             a?.visitStatus === "completed" ? "bg-success" :
                             a?.visitStatus === "cancelled" ? "bg-danger" : "bg-primary"
                           }`}
@@ -109,7 +130,7 @@ const UserDetails = () => {
                         </span>
                       </td>
                       <td>
-                        <span className={`badge px-3 py-2 ${a?.payment ? "bg-light text-success border border-success" : "bg-light text-warning border border-warning"}`}>
+                        <span className={`badge px-2 py-1.5 ${a?.payment ? "bg-light text-success border border-success" : "bg-light text-warning border border-warning"}`}>
                           {a?.payment ? "ONLINE" : "CASH"}
                         </span>
                       </td>
