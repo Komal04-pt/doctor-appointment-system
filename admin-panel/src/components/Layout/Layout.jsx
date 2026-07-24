@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="admin-layout">
-      {/* Mobile Sticky Navbar Header */}
+      {/* Mobile Sticky Top Navigation Bar */}
       <div className="admin-mobile-nav-bar d-md-none">
         <button
           type="button"
@@ -33,16 +33,15 @@ const Layout = ({ children }) => {
 
       {/* Slide-over Sidebar Drawer */}
       <div className={`admin-sidebar ${sidebarOpen ? "open" : ""}`}>
-        {/* Mobile Header Inside Drawer */}
-        <div className="sidebar-drawer-header d-flex justify-content-between align-items-center p-3 border-bottom border-secondary d-md-none">
-          <h5 className="m-0 text-white font-weight-bold">Navigation</h5>
-          <button
-            type="button"
-            className="btn-close btn-close-white"
-            onClick={() => setSidebarOpen(false)}
-            aria-label="Close"
-          ></button>
-        </div>
+        {/* Mobile Close Button (Top-Right of Drawer) */}
+        <button
+          type="button"
+          className="sidebar-close-btn d-md-none"
+          onClick={() => setSidebarOpen(false)}
+          aria-label="Close"
+        >
+          ✕
+        </button>
 
         {/* Navigation Menus */}
         <Menus onLinkClick={() => setSidebarOpen(false)} />

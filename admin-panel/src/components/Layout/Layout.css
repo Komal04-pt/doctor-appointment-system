@@ -1,11 +1,9 @@
-/* General Layout Setup */
 .admin-layout {
   position: relative;
   min-height: 100vh;
   background-color: #f8f9fa;
 }
 
-/* Mobile Sticky Top Navigation Bar */
 .admin-mobile-nav-bar {
   display: flex;
   align-items: center;
@@ -43,7 +41,6 @@
   border-radius: 2px;
 }
 
-/* Sidebar Styles */
 .admin-sidebar {
   position: fixed;
   top: 0;
@@ -56,7 +53,21 @@
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Content Area */
+.sidebar-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1005;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
 .admin-page-body {
   margin-left: 260px;
   min-height: 100vh;
@@ -69,7 +80,6 @@
   flex: 1;
 }
 
-/* Backdrop Overlay for Mobile */
 .sidebar-backdrop {
   position: fixed;
   top: 0;
@@ -81,7 +91,6 @@
   z-index: 999;
 }
 
-/* Mobile Responsiveness (<= 768px) */
 @media only screen and (max-width: 768px) {
   .admin-sidebar {
     transform: translateX(-100%);
